@@ -270,27 +270,23 @@ public class GroupDetails1 extends Activity {
 			groupDetailsList.addView(groupDetailsContainer[i]);
 			
 			
-			PlayerDetailsButtonOnClick = new View.OnClickListener() {
+		PlayerDetailsButtonOnClick = new OnClickClass() {
 				
 				@Override
-				public void onClick(View v) {
-					
+				public void onClick(View v, int i) {
 					passButtonDetails data = new passButtonDetails();
-					inputFName = getResources().getText(fNameInput[i].getId()).toString();
-					inputLName = getResources().getText(lNameInput[i].getId()).toString();
+					inputFName = getText(fNameInput[i].getId()).toString();
+					inputLName = getText(lNameInput[i].getId()).toString();
 					toast(inputFName);
 					data.setFirstName(inputFName);
 					data.setLastname(inputLName);
 					playerDetailsButton[i].setTag(data);
 					
-					passButtonDetails buttonData = (passButtonDetails)v.getTag();
-					String fName = buttonData.getFirstName();
-					String lName = buttonData.getLastName();
-					String fullName = fName+" " +lName;
-					toast(fullName);
-
+					
 				}
-			};
+			};	
+			
+			playerDetailsButton[i].setOnClickListener(PlayerDetailsButtonOnClick);
 			
 			/*inputFName = fNameInput[i].getText().toString();
 			toast(inputFName);
@@ -300,7 +296,7 @@ public class GroupDetails1 extends Activity {
 			playerDetailsButton[i].setTag(data);
 			*/
 			
-			playerDetailsButton[i].setOnClickListener(PlayerDetailsButtonOnClick);
+		
 			
 			//playerDetailsButton[i].setOnClickListener(PlayerDetailsButtonOnClick(fNameInput[i],fNameInput[i]));
 
