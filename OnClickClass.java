@@ -4,7 +4,7 @@ import android.view.View;
 
 public class OnClickClass implements View.OnClickListener{
 	private View view;
-	public int i;
+	private int i;
 	
 	@Override
 	public void onClick(View v) {
