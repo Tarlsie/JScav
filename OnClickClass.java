@@ -4,11 +4,18 @@ import android.view.View;
 
 public class OnClickClass implements View.OnClickListener{
 	private View view;
-	private int i;
+	public int i;
 	
-	public void OnClick(View v, int i) {
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onClick(View v, int i) {
 		this.i = i;
 		this.view = v;
+		
 	}
 
 	
